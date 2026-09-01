@@ -3,37 +3,46 @@ import './Skills.css'
 
 const skillCategories = [
   {
-    title: 'Developpement',
-    color: '#6c63ff',
-    skills: [
-      { name: 'React.js', level: 85 },
-      { name: 'Angular', level: 75 },
-      { name: 'ASP.NET Core', level: 70 },
-      { name: 'NestJS', level: 70 },
-      { name: 'Python', level: 80 },
-    ],
+    title: 'Développement Frontend',
+    techs: 5,
+    gradient: 'linear-gradient(135deg, #22d3ee, #60a5fa)',
+    color: '#22d3ee',
+    skills: ['React.js', 'Angular', 'JavaScript', 'Tailwind CSS', 'Figma'],
   },
   {
-    title: 'Systemes & Reseaux',
-    color: '#22c55e',
-    skills: [
-      { name: 'Windows / Linux', level: 90 },
-      { name: 'TCP/IP & VPN', level: 80 },
-      { name: 'Cybersecurite', level: 75 },
-      { name: 'PostgreSQL', level: 80 },
-      { name: 'Cloud & Virtualisation', level: 70 },
-    ],
+    title: 'Backend & API',
+    techs: 5,
+    gradient: 'linear-gradient(135deg, #34d399, #22c55e)',
+    color: '#34d399',
+    skills: ['Node.js', 'ASP.NET Core', 'NestJS', 'REST API', 'Express.js'],
+  },
+  {
+    title: 'Systèmes & Réseaux',
+    techs: 5,
+    gradient: 'linear-gradient(135deg, #818cf8, #6366f1)',
+    color: '#818cf8',
+    skills: ['Windows / Linux', 'TCP/IP & VPN', 'Cybersécurité', 'Cloud & Virtualisation', 'PostgreSQL'],
+  },
+  {
+    title: 'Bases de Données',
+    techs: 4,
+    gradient: 'linear-gradient(135deg, #fbbf24, #fb923c)',
+    color: '#fbbf24',
+    skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'SQL'],
   },
   {
     title: 'Outils & Design',
-    color: '#f59e0b',
-    skills: [
-      { name: 'Pack Office', level: 90 },
-      { name: 'Photoshop', level: 75 },
-      { name: 'Illustrator', level: 70 },
-      { name: 'Trello', level: 85 },
-      { name: 'Canva', level: 80 },
-    ],
+    techs: 5,
+    gradient: 'linear-gradient(135deg, #a8a8a8, #6b7280)',
+    color: '#a8a8a8',
+    skills: ['Pack Office', 'Photoshop', 'Illustrator', 'Trello', 'Canva'],
+  },
+  {
+    title: 'Gestion & Soft Skills',
+    techs: 4,
+    gradient: 'linear-gradient(135deg, #f472b6, #e879f9)',
+    color: '#f472b6',
+    skills: ['Management', 'Communication', 'Leadership', 'Travail d\'équipe'],
   },
 ]
 
@@ -42,15 +51,15 @@ export default function Skills() {
     <section id="skills" className="section skills-section">
       <div className="container">
         <motion.div
+          className="section-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title">Competences</h2>
-          <p className="section-subtitle">
-            Les technologies et outils que je maitrise
-          </p>
+          <span className="section-badge">Compétences Techniques</span>
+          <h2 className="section-title">Mes Compétences</h2>
+          <div className="section-underline" />
         </motion.div>
 
         <div className="skills-grid">
@@ -61,37 +70,26 @@ export default function Skills() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: catIndex * 0.15, duration: 0.5 }}
+              transition={{ delay: catIndex * 0.1, duration: 0.5 }}
             >
-              <div className="category-header">
-                <div className="category-dot" style={{ background: category.color }} />
+              <div className="category-header" style={{ backgroundImage: category.gradient }}>
+                <div className="category-dot" style={{ background: '#ffffff' }} />
                 <h3 className="category-title">{category.title}</h3>
+                <span className="category-count">{category.techs} techs</span>
               </div>
 
               <div className="skills-list">
                 {category.skills.map((skill, i) => (
                   <motion.div
-                    key={skill.name}
+                    key={skill}
                     className="skill-item"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: catIndex * 0.15 + i * 0.08, duration: 0.4 }}
+                    transition={{ delay: catIndex * 0.1 + i * 0.07, duration: 0.4 }}
                   >
-                    <div className="skill-info">
-                      <span className="skill-name">{skill.name}</span>
-                      <span className="skill-level">{skill.level}%</span>
-                    </div>
-                    <div className="skill-bar">
-                      <motion.div
-                        className="skill-fill"
-                        style={{ background: category.color }}
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 + i * 0.1, duration: 0.8, ease: 'easeOut' }}
-                      />
-                    </div>
+                    <span className="skill-dot" style={{ background: category.color }} />
+                    <span className="skill-name">{skill}</span>
                   </motion.div>
                 ))}
               </div>
