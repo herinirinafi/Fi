@@ -7,11 +7,11 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   const socials = [
-    { icon: <FiGithub size={18} />, href: 'https://github.com/', label: 'GitHub' },
-    { icon: <FiLinkedin size={18} />, href: 'https://linkedin.com/', label: 'LinkedIn' },
+    { icon: <FiGithub size={18} />, href: t.contact.githubValue, label: 'GitHub' },
+    { icon: <FiLinkedin size={18} />, href: t.contact.linkedinValue, label: 'LinkedIn' },
     { icon: <FaFacebookF size={18} />, href: '#', label: 'Facebook' },
     { icon: <FaWhatsapp size={18} />, href: '#', label: 'WhatsApp' },
-    { icon: <FiMail size={18} />, href: 'mailto:herinirinafitia@gmail.com', label: 'Email' },
+    { icon: <FiMail size={18} />, href: `mailto:${t.contact.emailValue}`, label: 'Email' },
   ]
 
   return (

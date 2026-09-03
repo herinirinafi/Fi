@@ -24,8 +24,8 @@ export default function Contact() {
 
   const actions = [
     { icon: <FiMail size={20} />, label: t.contact.email, href: `mailto:${t.contact.emailValue}`, external: true },
-    { icon: <FiGithub size={20} />, label: t.contact.github, href: 'https://github.com/', external: true },
-    { icon: <FiLinkedin size={20} />, label: t.contact.linkedin, href: 'https://linkedin.com/', external: true },
+    { icon: <FiGithub size={20} />, label: t.contact.github, href: t.contact.githubValue, external: true },
+    { icon: <FiLinkedin size={20} />, label: t.contact.linkedin, href: t.contact.linkedinValue, external: true },
   ]
 
   return (

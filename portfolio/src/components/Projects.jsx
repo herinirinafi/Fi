@@ -68,7 +68,7 @@ export default function Projects() {
                       <FiExternalLink size={16} />
                       {t.projects.live}
                     </a>
-                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:bg-white/10">
+                    <a href={t.contact.githubValue} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:bg-white/10">
                       <FiGithub size={16} />
                       {t.projects.github}
                     </a>

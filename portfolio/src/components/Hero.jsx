@@ -120,8 +120,8 @@ export default function Hero() {
             transition={{ delay: 0.75, duration: 0.5 }}
           >
             {[
-              { icon: <FiGithub size={20} />, href: 'https://github.com/', label: t.hero.github },
-              { icon: <FiLinkedin size={20} />, href: 'https://linkedin.com/', label: t.hero.linkedin },
+              { icon: <FiGithub size={20} />, href: t.contact.githubValue, label: t.hero.github },
+              { icon: <FiLinkedin size={20} />, href: t.contact.linkedinValue, label: t.hero.linkedin },
               { icon: <FiDownload size={18} />, href: '/src/assets/Sitrakiniaina.pdf', label: t.hero.cv, download: true },
             ].map((s) => (
               <a
