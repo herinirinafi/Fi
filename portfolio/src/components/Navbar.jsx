@@ -8,11 +8,10 @@ export default function Navbar() {
   const { t } = useLanguage()
   const navLinks = [
     { label: t.nav.home, href: '#home' },
-    { label: t.nav.skills, href: '#skills' },
-    { label: t.nav.stack, href: '#stack' },
-    { label: t.nav.certifications, href: '#certifications' },
-    { label: t.nav.design, href: '#design' },
+    { label: t.nav.about, href: '#about' },
     { label: t.nav.projects, href: '#projects' },
+    { label: t.nav.skills, href: '#stack' },
+    { label: t.nav.experience, href: '#experience' },
     { label: t.nav.contact, href: '#contact' },
   ]
   const [scrolled, setScrolled] = useState(false)

@@ -1,30 +1,52 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { FiCode, FiServer, FiCpu, FiTool } from 'react-icons/fi'
+import { motion } from 'framer-motion'
 import { useLanguage } from '../i18n/LanguageContext'
 
-const stackData = [
-  {
-    icon: FiCode,
-    skills: ['React.js', 'Angular', 'JavaScript', 'Tailwind CSS', 'Figma', 'HTML5', 'CSS3'],
-  },
-  {
-    icon: FiServer,
-    skills: ['Node.js', 'ASP.NET Core', 'NestJS', 'Express.js', 'REST API', 'Python'],
-  },
-  {
-    icon: FiCpu,
-    skills: ['Windows / Linux', 'TCP/IP & VPN', 'Cybersécurité', 'Cloud & Virtualisation', 'PostgreSQL', 'MySQL', 'MongoDB'],
-  },
-  {
-    icon: FiTool,
-    skills: ['Pack Office', 'Photoshop', 'Illustrator', 'Trello', 'Canva', 'Management', 'Communication'],
-  },
-]
+const deviconBase = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons'
+
+const iconPaths = {
+  react: `${deviconBase}/react/react-original.svg`,
+  nextjs: `${deviconBase}/nextjs/nextjs-original.svg`,
+  typescript: `${deviconBase}/typescript/typescript-original.svg`,
+  angular: `${deviconBase}/angularjs/angularjs-original.svg`,
+  nodejs: `${deviconBase}/nodejs/nodejs-original.svg`,
+  nestjs: `${deviconBase}/nestjs/nestjs-original.svg`,
+  express: `${deviconBase}/express/express-original.svg`,
+  python: `${deviconBase}/python/python-original.svg`,
+  mongodb: `${deviconBase}/mongodb/mongodb-original.svg`,
+  postgresql: `${deviconBase}/postgresql/postgresql-original.svg`,
+  mysql: `${deviconBase}/mysql/mysql-original.svg`,
+  microsoftsqlserver: `${deviconBase}/microsoftsqlserver/microsoftsqlserver-original.svg`,
+  git: `${deviconBase}/git/git-original.svg`,
+  github: `${deviconBase}/github/github-original.svg`,
+  docker: `${deviconBase}/docker/docker-original.svg`,
+  postman: `${deviconBase}/postman/postman-original.svg`,
+  figma: `${deviconBase}/figma/figma-original.svg`,
+  tailwindcss: `${deviconBase}/tailwindcss/tailwindcss-original.svg`,
+}
+
+const labelMap = {
+  react: 'React',
+  nextjs: 'Next.js',
+  typescript: 'TypeScript',
+  angular: 'Angular',
+  nodejs: 'Node.js',
+  nestjs: 'NestJS',
+  express: 'Express',
+  python: 'Python',
+  mongodb: 'MongoDB',
+  postgresql: 'PostgreSQL',
+  mysql: 'MySQL',
+  microsoftsqlserver: 'SQL Server',
+  git: 'Git',
+  github: 'GitHub',
+  docker: 'Docker',
+  postman: 'Postman',
+  figma: 'Figma',
+  tailwindcss: 'Tailwind CSS',
+}
 
 export default function Stack() {
   const { t } = useLanguage()
-  const [active, setActive] = useState(0)
 
   return (
     <section id="stack" className="relative px-6 py-28">
@@ -42,55 +64,45 @@ export default function Stack() {
           <p className="mx-auto mt-4 max-w-xl text-white/60">{t.stack.subtitle}</p>
         </motion.div>
 
-        <motion.div
-          className="mx-auto mb-12 flex max-w-3xl flex-wrap justify-center gap-2 rounded-full border border-white/10 bg-white/5 p-1.5 backdrop-blur-md"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          {stackData.map((cat, i) => {
-            const Icon = cat.icon
-            return (
-              <button
-                key={i}
-                onClick={() => setActive(i)}
-                className={`flex flex-1 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all ${
-                  active === i
-                    ? 'bg-gradient-to-r from-accent to-accent-2 text-[#0a0a12] shadow-[0_6px_20px_rgba(167,139,250,0.3)]'
-                    : 'text-white/60 hover:text-white'
-                }`}
-              >
-                <Icon size={16} />
-                <span>{t.stack.tabs[i]}</span>
-              </button>
-            )
-          })}
-        </motion.div>
+        <div className="grid gap-7 md:grid-cols-2">
+          {t.stack.groups.map((group, gi) => (
+            <motion.div
+              key={gi}
+              className="glass rounded-[20px] p-7 transition-all hover:border-accent/40 hover:shadow-[0_20px_50px_rgba(167,139,250,0.12)]"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: gi * 0.1, duration: 0.5 }}
+            >
+              <div className="mb-6 flex items-center gap-3">
+                <span className="h-8 w-1 rounded-full bg-gradient-to-b from-accent to-accent-2" />
+                <h3 className="text-xl font-bold uppercase tracking-wider text-white">{group.label}</h3>
+              </div>
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
-          >
-            {stackData[active].skills.map((skill, i) => (
-              <motion.div
-                key={skill}
-                initial={{ opacity: 0, scale: 0.85 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: i * 0.05 }}
-                className="group glass flex items-center gap-3 rounded-2xl px-5 py-4 transition-all hover:border-accent/40 hover:bg-white/[0.06]"
-              >
-                <span className="h-2.5 w-2.5 flex-shrink-0 rounded-full bg-gradient-to-r from-accent to-accent-2 transition-transform group-hover:scale-125" />
-                <span className="text-sm font-medium text-white/80">{skill}</span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
+              <div className="flex flex-wrap gap-3.5">
+                {group.items.map((iconKey, i) => (
+                  <motion.div
+                    key={iconKey}
+                    title={labelMap[iconKey]}
+                    className="group flex h-20 w-24 flex-col items-center justify-center gap-2 rounded-2xl border border-white/5 bg-white/[0.02] p-3 transition-all hover:-translate-y-1 hover:border-accent/40 hover:bg-white/[0.05]"
+                    initial={{ opacity: 0, scale: 0.85 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
+                  >
+                    <img
+                      src={iconPaths[iconKey]}
+                      alt={labelMap[iconKey]}
+                      loading="lazy"
+                      className="h-10 w-10 object-contain transition-transform group-hover:scale-110"
+                    />
+                    <span className="text-[0.65rem] font-medium text-white/50 group-hover:text-white/80">{labelMap[iconKey]}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   )
