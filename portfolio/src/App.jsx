@@ -1,4 +1,5 @@
 import { LanguageProvider } from './i18n/LanguageContext'
+import GitHubBackground from './components/GitHubBackground'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -13,6 +14,7 @@ import Chatbot from './components/Chatbot'
 function App() {
   return (
     <LanguageProvider>
+      <GitHubBackground />
       <Navbar />
       <main>
         <Hero />
