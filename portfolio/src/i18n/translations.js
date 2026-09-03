@@ -84,6 +84,37 @@ export const translations = {
         { title: 'Collaboration & Communication', desc: "Travail en équipe, partage de connaissances et communication efficace dans les environnements agiles." },
       ],
     },
+    certifications: {
+      eyebrow: 'Certifications',
+      title: 'Certifications',
+      subtitle: 'Mes certifications et formations en développement et en IA',
+      items: [
+        {
+          title: 'Responsive Web Design',
+          org: 'freeCodeCamp',
+          desc: 'HTML5, CSS3, Flexbox, Grid et conception responsive selon les meilleures pratiques.',
+          year: '300h · Certifié',
+        },
+        {
+          title: 'JavaScript & Data Structures',
+          org: 'freeCodeCamp',
+          desc: 'Logique de programmation, algorithmes, structures de données et ES6+.',
+          year: '300h · Certifié',
+        },
+        {
+          title: 'Frontend & React',
+          org: 'Formation & Pratique',
+          desc: 'React, Tailwind CSS, Vite et développement d’interfaces modernes et performantes.',
+          year: 'Projets concrets',
+        },
+        {
+          title: 'IA & Prompt Engineering',
+          org: 'Autoformation',
+          desc: 'Modèles de langage (LLM), conception de prompts et intégration d’IA dans les applications.',
+          year: 'En cours',
+        },
+      ],
+    },
     ai: {
       eyebrow: 'IA & Innovation',
       title: 'Intelligence Artificielle & Innovation',
@@ -214,6 +245,37 @@ export const translations = {
         { title: 'Associations', desc: 'Active participation in tech and student communities and associations.' },
         { title: 'Leadership', desc: 'Taking on responsibilities: team management, project coordination and initiative.' },
         { title: 'Collaboration & Communication', desc: 'Teamwork, knowledge sharing and effective communication in agile environments.' },
+      ],
+    },
+    certifications: {
+      eyebrow: 'Certifications',
+      title: 'Certifications',
+      subtitle: 'My certifications and training in development and AI',
+      items: [
+        {
+          title: 'Responsive Web Design',
+          org: 'freeCodeCamp',
+          desc: 'HTML5, CSS3, Flexbox, Grid and responsive design following best practices.',
+          year: '300h · Certified',
+        },
+        {
+          title: 'JavaScript & Data Structures',
+          org: 'freeCodeCamp',
+          desc: 'Programming logic, algorithms, data structures and ES6+.',
+          year: '300h · Certified',
+        },
+        {
+          title: 'Frontend & React',
+          org: 'Training & Practice',
+          desc: 'React, Tailwind CSS, Vite and building modern, performant interfaces.',
+          year: 'Real projects',
+        },
+        {
+          title: 'AI & Prompt Engineering',
+          org: 'Self-study',
+          desc: 'Large language models (LLMs), prompt design and integrating AI into applications.',
+          year: 'In progress',
+        },
       ],
     },
     ai: {
