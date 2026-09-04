@@ -7,12 +7,17 @@
   --font-terminal: 'Space Mono', ui-monospace, 'Courier New', monospace;
 
   --color-bg: #0a0a12;
-  --color-bg-soft: #12121d;
+  --color-soft: #12121d;
   --color-surface: #171724;
-  --color-text: #e7e7ee;
-  --color-text-dim: #9497a8;
+  --color-ink: #e7e7ee;
+  --color-muted: #9497a8;
   --color-accent: #a78bfa;
   --color-accent-2: #22d3ee;
+  --color-accent-contrast: #0a0a12;
+  --color-line: #26263a;
+
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
 
   --animate-spin-slow: spin 24s linear infinite;
   --animate-spin-slower: spin 36s linear infinite reverse;
@@ -55,14 +60,54 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  color-scheme: dark;
+}
+
+/* Light theme overrides (default is dark via .dark class) */
+html:not(.dark) {
+  color-scheme: light;
+  --color-bg: #f6f6fb;
+  --color-soft: #ffffff;
+  --color-surface: #ffffff;
+  --color-ink: #12121c;
+  --color-muted: #5b5e6d;
+  --color-accent: #7c3aed;
+  --color-accent-2: #0e7490;
+  --color-accent-contrast: #ffffff;
+  --color-line: #e4e4f0;
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(15, 15, 40, 0.12);
+  --gh-bg: #ffffff;
+  --gh-panel: #ffffff;
+  --gh-navbar: #f6f8fa;
+  --gh-border: #d0d7de;
+  --gh-border-soft: #d0d7de;
+  --gh-ink: #1f2328;
+  --gh-ink-strong: #1f2328;
+  --gh-muted: #5f6771;
+  --gh-link: #0969da;
+  --gh-empty: #ebedf0;
 }
 
 body {
   font-family: var(--font-sans);
   background-color: var(--color-bg);
-  color: var(--color-text);
+  color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+:root {
+  --gh-bg: #010409;
+  --gh-panel: #0d1117;
+  --gh-navbar: #161b22;
+  --gh-border: #30363d;
+  --gh-border-soft: #21262d;
+  --gh-ink: #e6edf3;
+  --gh-ink-strong: #f0f6fc;
+  --gh-muted: #8b949e;
+  --gh-link: #58a6ff;
+  --gh-empty: #161b22;
 }
 
 h1, h2 {
@@ -76,7 +121,7 @@ h3, h4 {
 
 ::selection {
   background: var(--color-accent);
-  color: #0a0a12;
+  color: #fff;
 }
 
 ::-webkit-scrollbar {
@@ -123,8 +168,8 @@ h3, h4 {
 }
 
 @utility glass {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   backdrop-filter: blur(8px);
 }
 

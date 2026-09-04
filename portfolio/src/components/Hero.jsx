@@ -19,7 +19,7 @@ export default function Hero() {
         {Array.from({ length: 45 }).map((_, i) => (
           <span
             key={i}
-            className="absolute h-[3px] w-[3px] rounded-full bg-white/70"
+            className="absolute h-[3px] w-[3px] rounded-full bg-ink/70"
             style={{
               left: `${(i * 37) % 100}%`,
               top: `${(i * 53) % 100}%`,
@@ -41,14 +41,14 @@ export default function Hero() {
           <div className="absolute h-[380px] w-[380px] animate-spin-slower rounded-full border-2 border-dashed border-accent/40" />
           <div className="absolute h-[330px] w-[330px] animate-spin-slow rounded-full border-2 border-dashed border-accent-2/30" />
           <div className="absolute h-[300px] w-[300px] overflow-hidden rounded-full bg-gradient-to-br from-accent/20 to-accent-2/20 blur-md" />
-          <div className="relative h-[280px] w-[280px] overflow-hidden rounded-full border-[3px] border-white/10 shadow-[0_0_60px_rgba(167,139,250,0.25)]">
+          <div className="relative h-[280px] w-[280px] overflow-hidden rounded-full border-[3px] border-line shadow-[0_0_60px_rgba(167,139,250,0.25)]">
             <img src={profileImg} alt="Fi'tia HERINIRINA" className="h-full w-full object-cover" />
           </div>
         </motion.div>
 
         <div className="flex flex-col items-start gap-6">
           <motion.div
-            className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-white/40"
+            className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-muted"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.5 }}
@@ -63,7 +63,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25, duration: 0.6 }}
           >
-            <span className="text-5xl tracking-tight text-white md:text-7xl">{t.hero.name}</span>
+            <span className="text-5xl tracking-tight text-ink md:text-7xl">{t.hero.name}</span>
           </motion.h1>
 
           <motion.div
@@ -76,7 +76,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.p
-            className="max-w-[540px] text-lg text-white/75"
+            className="max-w-[540px] text-lg text-ink/75"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45, duration: 0.6 }}
@@ -92,7 +92,7 @@ export default function Hero() {
           >
             {t.hero.stackLine.split(' • ').map((tech, i) => (
               <span key={i}>
-                {i > 0 && <span className="mx-1 text-white/25">•</span>}
+                {i > 0 && <span className="mx-1 text-muted/60">•</span>}
                 {tech}
               </span>
             ))}
@@ -104,11 +104,11 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            <a href="#projects" onClick={handleScroll('#projects')} className="inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-accent to-accent-2 px-8 py-3.5 text-sm font-semibold text-[#0a0a12] shadow-[0_10px_30px_rgba(167,139,250,0.35)] transition-all hover:-translate-y-1 hover:brightness-105 hover:shadow-[0_15px_40px_rgba(167,139,250,0.5)]">
+            <a href="#projects" onClick={handleScroll('#projects')} className="inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-accent to-accent-2 px-8 py-3.5 text-sm font-semibold text-accent-contrast shadow-[0_10px_30px_rgba(167,139,250,0.35)] transition-all hover:-translate-y-1 hover:brightness-105 hover:shadow-[0_15px_40px_rgba(167,139,250,0.5)]">
               {t.hero.ctaProjects}
               <FiArrowRight size={18} />
             </a>
-            <a href="#contact" onClick={handleScroll('#contact')} className="inline-flex items-center gap-2.5 rounded-xl border border-white/10 bg-white/5 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-accent/40 hover:bg-white/10">
+            <a href="#contact" onClick={handleScroll('#contact')} className="inline-flex items-center gap-2.5 rounded-xl border border-line bg-soft px-8 py-3.5 text-sm font-semibold text-ink backdrop-blur-md transition-all hover:border-accent/40 hover:bg-soft">
               {t.hero.ctaContact}
             </a>
           </motion.div>
@@ -131,7 +131,7 @@ export default function Hero() {
                 rel={s.download ? undefined : 'noopener noreferrer'}
                 download={s.download ? true : undefined}
                 aria-label={s.label}
-                className="flex h-12 items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 text-sm font-medium text-white/70 transition-all hover:-translate-y-1 hover:border-accent/50 hover:text-white hover:shadow-[0_8px_25px_rgba(167,139,250,0.3)]"
+                className="flex h-12 items-center gap-2 rounded-full border border-line bg-soft px-5 text-sm font-medium text-muted transition-all hover:-translate-y-1 hover:border-accent/50 hover:text-ink hover:shadow-[0_8px_25px_rgba(167,139,250,0.3)]"
               >
                 {s.icon}
                 {s.label}
@@ -142,7 +142,7 @@ export default function Hero() {
       </div>
 
       <div className="relative mx-auto mt-16 flex max-w-6xl justify-center">
-        <a href="#about" onClick={handleScroll('#about')} className="flex flex-col items-center gap-2 text-white/40 transition-colors hover:text-accent">
+        <a href="#about" onClick={handleScroll('#about')} className="flex flex-col items-center gap-2 text-muted transition-colors hover:text-accent">
           <span className="text-xs font-semibold uppercase tracking-widest">{t.nav.about}</span>
           <FiArrowDown className="animate-bounce" />
         </a>

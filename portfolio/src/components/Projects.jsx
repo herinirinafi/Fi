@@ -22,8 +22,8 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
         >
           <span className="section-eyebrow">{t.projects.eyebrow}</span>
-          <h2 className="text-4xl font-bold text-white md:text-5xl">{t.projects.title}</h2>
-          <p className="mx-auto mt-4 max-w-xl text-white/60">{t.projects.subtitle}</p>
+          <h2 className="text-4xl font-bold text-ink md:text-5xl">{t.projects.title}</h2>
+          <p className="mx-auto mt-4 max-w-xl text-muted">{t.projects.subtitle}</p>
         </motion.div>
 
         <div className="flex flex-col gap-9">
@@ -50,10 +50,10 @@ export default function Projects() {
                 </div>
 
                 <div className="flex flex-col justify-center gap-4 p-7 md:p-9">
-                  <h3 className="text-3xl font-bold text-white md:text-4xl">{project.name}</h3>
+                  <h3 className="text-3xl font-bold text-ink md:text-4xl">{project.name}</h3>
                   <p className="text-lg font-semibold text-gradient">{project.subtitle}</p>
 
-                  <p className="leading-relaxed text-white/70">{project.description}</p>
+                  <p className="leading-relaxed text-ink/70">{project.description}</p>
 
                   <div className="mt-1 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
@@ -64,15 +64,15 @@ export default function Projects() {
                   </div>
 
                   <div className="mt-3 flex flex-wrap gap-3">
-                    <a href="#" onClick={(e) => e.preventDefault()} className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent-2 px-6 py-3 text-sm font-semibold text-[#0a0a12] shadow-[0_8px_25px_rgba(167,139,250,0.35)] transition-all hover:-translate-y-0.5 hover:shadow-[0_12px_35px_rgba(167,139,250,0.5)]">
+                    <a href="#" onClick={(e) => e.preventDefault()} className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent-2 px-6 py-3 text-sm font-semibold text-accent-contrast shadow-[0_8px_25px_rgba(167,139,250,0.35)] transition-all hover:-translate-y-0.5 hover:shadow-[0_12px_35px_rgba(167,139,250,0.5)]">
                       <FiExternalLink size={16} />
                       {t.projects.live}
                     </a>
-                    <a href={t.contact.githubValue} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:bg-white/10">
+                    <a href={t.contact.githubValue} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-line bg-soft px-6 py-3 text-sm font-semibold text-ink transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:bg-soft">
                       <FiGithub size={16} />
                       {t.projects.github}
                     </a>
-                    <a href="#contact" onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }) }} className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:bg-white/10">
+                    <a href="#contact" onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }) }} className="inline-flex items-center gap-2 rounded-xl border border-line bg-soft px-6 py-3 text-sm font-semibold text-ink transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:bg-soft">
                       {t.projects.details}
                       <FiArrowUpRight size={16} />
                     </a>

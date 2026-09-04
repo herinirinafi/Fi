@@ -18,8 +18,8 @@ export default function Certifications() {
           transition={{ duration: 0.6 }}
         >
           <span className="section-eyebrow">{t.certifications.eyebrow}</span>
-          <h2 className="text-4xl font-bold text-white md:text-5xl">{t.certifications.title}</h2>
-          <p className="mx-auto mt-4 max-w-xl text-white/60">{t.certifications.subtitle}</p>
+          <h2 className="text-4xl font-bold text-ink md:text-5xl">{t.certifications.title}</h2>
+          <p className="mx-auto mt-4 max-w-xl text-muted">{t.certifications.subtitle}</p>
         </motion.div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -39,19 +39,19 @@ export default function Certifications() {
                     <span className="flex h-16 w-16 items-center justify-center rounded-2xl border border-accent/30 bg-accent/15 text-accent transition-all group-hover:scale-110">
                       <CardIcon size={30} />
                     </span>
-                    <h3 className="text-center text-lg font-bold text-white">{item.title}</h3>
+                    <h3 className="text-center text-lg font-bold text-ink">{item.title}</h3>
                     <p className="text-center text-xs uppercase tracking-widest text-accent">{item.org}</p>
-                    <span className="mt-1 flex items-center gap-1 text-xs text-white/40">
+                    <span className="mt-1 flex items-center gap-1 text-xs text-muted">
                       Hover <FiArrowRight size={12} />
                     </span>
                   </div>
 
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-[20px] border border-accent/40 bg-gradient-to-br from-[#17152a] to-[#0a0a12] p-6 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-[20px] border border-accent/40 bg-bg p-6 [backface-visibility:hidden] [transform:rotateY(180deg)]">
                     <span className="text-accent">
                       <FiAward size={22} />
                     </span>
-                    <h3 className="text-center text-base font-bold text-white">{item.title}</h3>
-                    <p className="text-center text-sm leading-relaxed text-white/65">{item.desc}</p>
+                    <h3 className="text-center text-base font-bold text-ink">{item.title}</h3>
+                    <p className="text-center text-sm leading-relaxed text-ink/65">{item.desc}</p>
                     <span className="mt-1 inline-block rounded-full border border-accent/30 bg-accent/15 px-3 py-1 text-[11px] font-semibold text-accent">
                       {item.year}
                     </span>

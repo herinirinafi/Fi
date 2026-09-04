@@ -18,8 +18,8 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
         >
           <span className="section-eyebrow">{t.experience.eyebrow}</span>
-          <h2 className="text-4xl font-bold text-white md:text-5xl">{t.experience.title}</h2>
-          <p className="mx-auto mt-4 max-w-xl text-white/60">{t.experience.subtitle}</p>
+          <h2 className="text-4xl font-bold text-ink md:text-5xl">{t.experience.title}</h2>
+          <p className="mx-auto mt-4 max-w-xl text-muted">{t.experience.subtitle}</p>
         </motion.div>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -38,8 +38,8 @@ export default function Experience() {
                   <Icon size={26} />
                 </span>
                 <div>
-                  <h3 className="mb-2 text-xl font-bold text-white">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-white/60">{item.desc}</p>
+                  <h3 className="mb-2 text-xl font-bold text-ink">{item.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted">{item.desc}</p>
                 </div>
               </motion.div>
             )

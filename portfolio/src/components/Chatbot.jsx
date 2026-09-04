@@ -67,7 +67,7 @@ export default function Chatbot() {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1, type: 'spring', stiffness: 200, damping: 15 }}
-        className="fixed bottom-6 left-5 z-[120] flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-[#0a0a12] shadow-[0_10px_30px_rgba(167,139,250,0.5)] transition-transform hover:scale-110"
+        className="fixed bottom-6 left-5 z-[120] flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-accent-contrast shadow-[0_10px_30px_rgba(167,139,250,0.5)] transition-transform hover:scale-110"
       >
         {open ? <FiX size={24} /> : <FiMessageCircle size={24} />}
       </motion.button>
@@ -79,20 +79,20 @@ export default function Chatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 30, scale: 0.9 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-24 left-5 z-[120] flex h-[460px] w-[calc(100%-2.5rem)] max-w-[360px] flex-col overflow-hidden rounded-[20px] border border-white/10 bg-[#12121d] shadow-[0_24px_60px_rgba(0,0,0,0.6)]"
+            className="fixed bottom-24 left-5 z-[120] flex h-[460px] w-[calc(100%-2.5rem)] max-w-[360px] flex-col overflow-hidden rounded-[20px] border border-line bg-bg shadow-[0_24px_60px_rgba(0,0,0,0.5)]"
           >
-            <div className="flex items-center gap-3 border-b border-white/10 bg-white/[0.03] px-5 py-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 font-display font-bold text-[#0a0a12]">
+            <div className="flex items-center gap-3 border-b border-line bg-soft px-5 py-4">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 font-display font-bold text-accent-contrast">
                 F
               </div>
               <div>
-                <p className="font-semibold text-white">{t.chatbot.title}</p>
+                <p className="font-semibold text-ink">{t.chatbot.title}</p>
                 <p className="flex items-center gap-1.5 text-xs text-emerald-400">
                   <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-emerald-400" />
                   {t.chatbot.status}
                 </p>
               </div>
-              <button onClick={() => setOpen(false)} aria-label="Close" className="ml-auto text-white/50 hover:text-white">
+              <button onClick={() => setOpen(false)} aria-label="Close" className="ml-auto text-muted hover:text-ink">
                 <FiX size={20} />
               </button>
             </div>
@@ -102,8 +102,8 @@ export default function Chatbot() {
                 <div key={i} className={`flex ${m.from === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm ${
                     m.from === 'user'
-                      ? 'bg-gradient-to-r from-accent to-accent-2 text-[#0a0a12]'
-                      : 'glass text-white/80'
+                      ? 'bg-gradient-to-r from-accent to-accent-2 text-accent-contrast'
+                      : 'glass text-ink/80'
                   }`}>
                     {m.text}
                   </div>
@@ -112,14 +112,14 @@ export default function Chatbot() {
               {typing && (
                 <div className="flex gap-1.5 px-4">
                   {[0, 1, 2].map(i => (
-                    <span key={i} className="h-2 w-2 animate-bounce-dot rounded-full bg-white/40" style={{ animationDelay: `${i * 0.15}s` }} />
+                    <span key={i} className="h-2 w-2 animate-bounce-dot rounded-full bg-ink/40" style={{ animationDelay: `${i * 0.15}s` }} />
                   ))}
                 </div>
               )}
               <div ref={endRef} />
             </div>
 
-            <div className="border-t border-white/10 p-3">
+            <div className="border-t border-line p-3">
               <div className="mb-2 flex flex-wrap gap-2">
                 {quickQuestions.map((q) => (
                   <button
@@ -136,9 +136,9 @@ export default function Chatbot() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder={t.chatbot.placeholder}
-                  className="flex-1 rounded-xl border border-white/10 bg-[#0a0a12] px-4 py-2.5 text-sm text-white placeholder-white/30 focus:border-accent/60 focus:outline-none"
+                  className="flex-1 rounded-xl border border-line bg-bg px-4 py-2.5 text-sm text-ink placeholder-ink/30 focus:border-accent/60 focus:outline-none"
                 />
-                <button type="submit" aria-label="Send" className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-accent to-accent-2 text-[#0a0a12]">
+                <button type="submit" aria-label="Send" className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-accent to-accent-2 text-accent-contrast">
                   <FiSend size={18} />
                 </button>
               </form>

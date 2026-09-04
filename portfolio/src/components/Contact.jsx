@@ -39,8 +39,8 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
         >
           <span className="section-eyebrow">{t.contact.eyebrow}</span>
-          <h2 className="text-4xl font-bold text-white md:text-5xl">{t.contact.title}</h2>
-          <p className="mx-auto mt-4 max-w-xl text-white/60">{t.contact.subtitle}</p>
+          <h2 className="text-4xl font-bold text-ink md:text-5xl">{t.contact.title}</h2>
+          <p className="mx-auto mt-4 max-w-xl text-muted">{t.contact.subtitle}</p>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-5 py-2 text-xs font-semibold text-emerald-400">
             <span className="h-2 w-2 animate-pulse-dot rounded-full bg-emerald-400" />
             {t.chatbot.status}
@@ -56,11 +56,11 @@ export default function Contact() {
         >
           <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr]">
             <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-3 text-white/70">
+              <div className="flex items-center gap-3 text-ink/70">
                 <FiMapPin size={18} className="text-accent" />
                 <span className="text-sm">{t.contact.location}</span>
               </div>
-              <div className="flex items-center gap-3 text-white/70">
+              <div className="flex items-center gap-3 text-ink/70">
                 <FiMail size={18} className="text-accent" />
                 <a href={`mailto:${t.contact.emailValue}`} className="text-sm transition-colors hover:text-accent">{t.contact.emailValue}</a>
               </div>
@@ -72,7 +72,7 @@ export default function Contact() {
                     href={a.href}
                     target={a.external ? '_blank' : undefined}
                     rel={a.external ? 'noopener noreferrer' : undefined}
-                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:bg-white/10"
+                    className="flex items-center gap-3 rounded-xl border border-line bg-soft px-5 py-4 text-sm font-semibold text-ink transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:bg-soft"
                   >
                     <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/15 text-accent">{a.icon}</span>
                     {a.label}
@@ -84,14 +84,14 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <div className="grid gap-4 sm:grid-cols-2">
                 <input name="name" type="text" placeholder={t.contact.namePlaceholder} value={formData.name} onChange={handleChange} required
-                  className="w-full rounded-xl border border-white/10 bg-[#0a0a12] px-4 py-3.5 text-sm text-white placeholder-white/30 transition-all focus:border-accent/60 focus:outline-none focus:ring-[3px] focus:ring-accent/15"
+                  className="w-full rounded-xl border border-line bg-bg px-4 py-3.5 text-sm text-ink placeholder-ink/30 transition-all focus:border-accent/60 focus:outline-none focus:ring-[3px] focus:ring-accent/15"
                 />
                 <input name="email" type="email" placeholder={t.contact.emailPlaceholder} value={formData.email} onChange={handleChange} required
-                  className="w-full rounded-xl border border-white/10 bg-[#0a0a12] px-4 py-3.5 text-sm text-white placeholder-white/30 transition-all focus:border-accent/60 focus:outline-none focus:ring-[3px] focus:ring-accent/15"
+                  className="w-full rounded-xl border border-line bg-bg px-4 py-3.5 text-sm text-ink placeholder-ink/30 transition-all focus:border-accent/60 focus:outline-none focus:ring-[3px] focus:ring-accent/15"
                 />
               </div>
               <textarea name="message" rows="5" placeholder={t.contact.messagePlaceholder} value={formData.message} onChange={handleChange} required
-                className="w-full resize-y rounded-xl border border-white/10 bg-[#0a0a12] px-4 py-3.5 text-sm text-white placeholder-white/30 transition-all focus:border-accent/60 focus:outline-none focus:ring-[3px] focus:ring-accent/15"
+                className="w-full resize-y rounded-xl border border-line bg-bg px-4 py-3.5 text-sm text-ink placeholder-ink/30 transition-all focus:border-accent/60 focus:outline-none focus:ring-[3px] focus:ring-accent/15"
               />
 
               {status === 'sent' && (
@@ -105,10 +105,10 @@ export default function Contact() {
                 </motion.div>
               )}
 
-              <button type="submit" disabled={status === 'sending'} className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent-2 py-4 text-sm font-bold text-[#0a0a12] shadow-[0_10px_30px_rgba(167,139,250,0.35)] transition-all hover:-translate-y-0.5 hover:shadow-[0_15px_40px_rgba(167,139,250,0.5)] disabled:cursor-not-allowed disabled:opacity-70">
+              <button type="submit" disabled={status === 'sending'} className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent-2 py-4 text-sm font-bold text-accent-contrast shadow-[0_10px_30px_rgba(167,139,250,0.35)] transition-all hover:-translate-y-0.5 hover:shadow-[0_15px_40px_rgba(167,139,250,0.5)] disabled:cursor-not-allowed disabled:opacity-70">
                 {status === 'sending' ? (
                   <>
-                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-[#0a0a12]/30 border-t-[#0a0a12]" />
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-accent-contrast/30 border-t-accent-contrast" />
                     ...
                   </>
                 ) : (

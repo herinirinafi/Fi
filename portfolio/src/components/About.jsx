@@ -18,7 +18,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
         >
           <span className="section-eyebrow">{t.about.eyebrow}</span>
-          <h2 className="text-4xl font-bold text-white md:text-5xl">{t.about.title}</h2>
+          <h2 className="text-4xl font-bold text-ink md:text-5xl">{t.about.title}</h2>
         </motion.div>
 
         <motion.div
@@ -39,7 +39,7 @@ export default function About() {
             ))}
           </div>
 
-          <p className="mt-6 leading-relaxed text-white/70">
+          <p className="mt-6 leading-relaxed text-ink/70">
             {expanded ? t.about.body : `${t.about.body.slice(0, 220)}...`}
           </p>
 
@@ -50,7 +50,7 @@ export default function About() {
             >
               {expanded ? '−' : '+'} {t.about.readMore}
             </button>
-            <a href="/src/assets/Sitrakiniaina.pdf" download className="inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-accent to-accent-2 px-6 py-3 text-sm font-semibold text-[#0a0a12] shadow-[0_10px_30px_rgba(167,139,250,0.3)] transition-all hover:-translate-y-0.5 hover:shadow-[0_15px_40px_rgba(167,139,250,0.5)]">
+            <a href="/src/assets/Sitrakiniaina.pdf" download className="inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-accent to-accent-2 px-6 py-3 text-sm font-semibold text-accent-contrast shadow-[0_10px_30px_rgba(167,139,250,0.3)] transition-all hover:-translate-y-0.5 hover:shadow-[0_15px_40px_rgba(167,139,250,0.5)]">
               <FiDownload size={18} />
               {t.about.downloadCv}
             </a>

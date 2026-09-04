@@ -1,4 +1,5 @@
 import { LanguageProvider } from './i18n/LanguageContext'
+import { ThemeProvider } from './theme/ThemeContext'
 import GitHubBackground from './components/GitHubBackground'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -15,20 +16,22 @@ import Chatbot from './components/Chatbot'
 function App() {
   return (
     <LanguageProvider>
-      <GitHubBackground />
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Stack />
-        <Projects />
-        <Experience />
-        <Certifications />
-        <AIInnovation />
-        <Contact />
-      </main>
-      <Footer />
-      <Chatbot />
+      <ThemeProvider>
+        <GitHubBackground />
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Stack />
+          <Projects />
+          <Experience />
+          <Certifications />
+          <AIInnovation />
+          <Contact />
+        </main>
+        <Footer />
+        <Chatbot />
+      </ThemeProvider>
     </LanguageProvider>
   )
 }

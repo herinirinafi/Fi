@@ -60,8 +60,8 @@ export default function Stack() {
           transition={{ duration: 0.6 }}
         >
           <span className="section-eyebrow">{t.stack.eyebrow}</span>
-          <h2 className="text-4xl font-bold text-white md:text-5xl">{t.stack.title}</h2>
-          <p className="mx-auto mt-4 max-w-xl text-white/60">{t.stack.subtitle}</p>
+          <h2 className="text-4xl font-bold text-ink md:text-5xl">{t.stack.title}</h2>
+          <p className="mx-auto mt-4 max-w-xl text-muted">{t.stack.subtitle}</p>
         </motion.div>
 
         <div className="grid gap-7 md:grid-cols-2">
@@ -76,7 +76,7 @@ export default function Stack() {
             >
               <div className="mb-6 flex items-center gap-3">
                 <span className="h-8 w-1 rounded-full bg-gradient-to-b from-accent to-accent-2" />
-                <h3 className="text-xl font-bold uppercase tracking-wider text-white">{group.label}</h3>
+                <h3 className="text-xl font-bold uppercase tracking-wider text-ink">{group.label}</h3>
               </div>
 
               <div className="flex flex-wrap gap-3.5">
@@ -84,7 +84,7 @@ export default function Stack() {
                   <motion.div
                     key={iconKey}
                     title={labelMap[iconKey]}
-                    className="group flex h-20 w-24 flex-col items-center justify-center gap-2 rounded-2xl border border-white/5 bg-white/[0.02] p-3 transition-all hover:-translate-y-1 hover:border-accent/40 hover:bg-white/[0.05]"
+                    className="group flex h-20 w-24 flex-col items-center justify-center gap-2 rounded-2xl border border-line bg-soft p-3 transition-all hover:-translate-y-1 hover:border-accent/40 hover:bg-soft"
                     initial={{ opacity: 0, scale: 0.85 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -96,7 +96,7 @@ export default function Stack() {
                       loading="lazy"
                       className="h-10 w-10 object-contain transition-transform group-hover:scale-110"
                     />
-                    <span className="text-[0.65rem] font-medium text-white/50 group-hover:text-white/80">{labelMap[iconKey]}</span>
+                    <span className="text-[0.65rem] font-medium text-muted group-hover:text-ink">{labelMap[iconKey]}</span>
                   </motion.div>
                 ))}
               </div>

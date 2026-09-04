@@ -19,8 +19,8 @@ export default function AIInnovation() {
           transition={{ duration: 0.6 }}
         >
           <span className="section-eyebrow">{t.ai.eyebrow}</span>
-          <h2 className="text-4xl font-bold text-white md:text-5xl">{t.ai.title}</h2>
-          <p className="mx-auto mt-4 max-w-xl text-white/60">{t.ai.subtitle}</p>
+          <h2 className="text-4xl font-bold text-ink md:text-5xl">{t.ai.title}</h2>
+          <p className="mx-auto mt-4 max-w-xl text-muted">{t.ai.subtitle}</p>
         </motion.div>
 
         <motion.div
@@ -34,20 +34,20 @@ export default function AIInnovation() {
             {t.ai.items.map((item, i) => {
               const Icon = icons[i]
               return (
-                <div key={item} className="group flex flex-col items-center gap-3 rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center transition-all hover:-translate-y-1 hover:border-accent-2/40">
+                <div key={item} className="group flex flex-col items-center gap-3 rounded-2xl border border-line bg-soft p-6 text-center transition-all hover:-translate-y-1 hover:border-accent-2/40">
                   <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-2/15 text-accent-2 transition-all group-hover:scale-110">
                     <Icon size={26} />
                   </span>
-                  <span className="font-semibold text-white">{item}</span>
+                  <span className="font-semibold text-ink">{item}</span>
                 </div>
               )
             })}
           </div>
 
-          <p className="mx-auto mt-8 max-w-2xl text-center leading-relaxed text-white/70">{t.ai.description}</p>
+          <p className="mx-auto mt-8 max-w-2xl text-center leading-relaxed text-ink/70">{t.ai.description}</p>
 
           <div className="mt-8 text-center">
-            <a href="#projects" onClick={(e) => { e.preventDefault(); document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' }) }} className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent-2 px-8 py-3.5 text-sm font-semibold text-[#0a0a12] shadow-[0_10px_30px_rgba(167,139,250,0.35)] transition-all hover:-translate-y-0.5 hover:shadow-[0_15px_40px_rgba(167,139,250,0.5)]">
+            <a href="#projects" onClick={(e) => { e.preventDefault(); document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' }) }} className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent-2 px-8 py-3.5 text-sm font-semibold text-accent-contrast shadow-[0_10px_30px_rgba(167,139,250,0.35)] transition-all hover:-translate-y-0.5 hover:shadow-[0_15px_40px_rgba(167,139,250,0.5)]">
               {t.ai.cta}
               <FiArrowUpRight size={18} />
             </a>
