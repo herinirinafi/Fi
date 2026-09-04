@@ -55,7 +55,7 @@ export default function Footer() {
       </div>
 
       <div className="relative flex flex-wrap items-center justify-between gap-3 border-t border-line pt-6">
-        <p className="text-xs text-muted">&copy; {year} Fi'tia Portfolio. {t.footer.rights}</p>
+        <p className="text-xs text-muted">&copy; {year} Fi''tia Portfolio. {t.footer.rights}</p>
         <p className="inline-flex items-center gap-1.5 text-xs text-muted">
           {t.footer.made} <FiHeart size={14} className="text-accent" /> 🇲🇬
         </p>

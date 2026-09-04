@@ -10,7 +10,7 @@ export const translations = {
     },
     hero: {
       hello: 'Bonjour, je suis',
-      name: "Fi'tia HERINIRINA",
+      name: "Fi''tia HERINIRINA",
       role: 'Full Stack Developer',
       stackLine: 'React • Node.js • Express • TypeScript',
       tagline: "Étudiant en Master 1 Informatique et développeur full stack passionné par les applications web modernes, les APIs backend et l'architecture logicielle.",
@@ -26,7 +26,7 @@ export const translations = {
       heading: 'Master 1 Informatique',
       sub: 'Développeur Full Stack passionné',
       domains: ['Web', 'Backend', 'API', 'Database', 'IA'],
-      body: "Je suis Fi'tia HERINIRINA, étudiant en Master 1 Informatique et développeur Full Stack. Je m'intéresse particulièrement à la conception d'applications web modernes, aux APIs backend et à l'architecture logicielle. Mon approche consiste à apprendre par la pratique à travers des projets concrets et à rechercher continuellement de meilleures solutions techniques. En parallèle du développement web, je m'intéresse aux technologies d'intelligence artificielle, notamment aux LLM et au Prompt Engineering.",
+      body: "Je suis Fi''tia HERINIRINA, étudiant en Master 1 Informatique et développeur Full Stack. Je m'intéresse particulièrement à la conception d'applications web modernes, aux APIs backend et à l'architecture logicielle. Mon approche consiste à apprendre par la pratique à travers des projets concrets et à rechercher continuellement de meilleures solutions techniques. En parallèle du développement web, je m'intéresse aux technologies d'intelligence artificielle, notamment aux LLM et au Prompt Engineering.",
       readMore: 'Lire la suite',
       downloadCv: 'Télécharger mon CV',
     },
@@ -141,7 +141,7 @@ export const translations = {
       send: 'Envoyer le message',
     },
     footer: {
-      tagline: "Portfolio personnel de Fi'tia HERINIRINA. Développeur Full Stack & entrepreneur passionné.",
+      tagline: "Portfolio personnel de Fi''tia HERINIRINA. Développeur Full Stack & entrepreneur passionné.",
       techs: 'Technologies',
       follow: 'Suivez-moi',
       location: 'Fianarantsoa, Madagascar',
@@ -173,7 +173,7 @@ export const translations = {
     },
     hero: {
       hello: 'Hello, I am',
-      name: "Fi'tia HERINIRINA",
+      name: "Fi''tia HERINIRINA",
       role: 'Full Stack Developer',
       stackLine: 'React • Node.js • Express • TypeScript',
       tagline: "Computer Science Master's student and full-stack developer passionate about modern web applications, backend APIs and software architecture.",
@@ -189,7 +189,7 @@ export const translations = {
       heading: 'Master 1 Computer Science',
       sub: 'Passionate Full Stack Developer',
       domains: ['Web', 'Backend', 'API', 'Database', 'AI'],
-      body: "I'm Fi'tia HERINIRINA, a Master's student in Computer Science and a Full Stack developer. I'm particularly interested in building modern web applications, backend APIs and software architecture. My approach is to learn by practice through concrete projects and to constantly search for better technical solutions. Alongside web development, I'm also interested in artificial intelligence technologies, especially LLMs and Prompt Engineering.",
+      body: "I'm Fi''tia HERINIRINA, a Master's student in Computer Science and a Full Stack developer. I'm particularly interested in building modern web applications, backend APIs and software architecture. My approach is to learn by practice through concrete projects and to constantly search for better technical solutions. Alongside web development, I'm also interested in artificial intelligence technologies, especially LLMs and Prompt Engineering.",
       readMore: 'Read more',
       downloadCv: 'Download my CV',
     },
@@ -304,7 +304,7 @@ export const translations = {
       send: 'Send message',
     },
     footer: {
-      tagline: "Personal portfolio of Fi'tia HERINIRINA. Passionate Full Stack Developer & entrepreneur.",
+      tagline: "Personal portfolio of Fi''tia HERINIRINA. Passionate Full Stack Developer & entrepreneur.",
       techs: 'Technologies',
       follow: 'Follow me',
       location: 'Fianarantsoa, Madagascar',

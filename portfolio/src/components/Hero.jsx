@@ -42,7 +42,7 @@ export default function Hero() {
           <div className="absolute h-[330px] w-[330px] animate-spin-slow rounded-full border-2 border-dashed border-accent-2/30" />
           <div className="absolute h-[300px] w-[300px] overflow-hidden rounded-full bg-gradient-to-br from-accent/20 to-accent-2/20 blur-md" />
           <div className="relative h-[280px] w-[280px] overflow-hidden rounded-full border-[3px] border-line shadow-[0_0_60px_rgba(167,139,250,0.25)]">
-            <img src={profileImg} alt="Fi'tia HERINIRINA" className="h-full w-full object-cover" />
+            <img src={profileImg} alt="Fi''tia HERINIRINA" className="h-full w-full object-cover" />
           </div>
         </motion.div>
 
