@@ -3,7 +3,7 @@ import { FiExternalLink, FiGithub, FiArrowUpRight } from 'react-icons/fi'
 import { useLanguage } from '../i18n/LanguageContext'
 
 import imgDataMap from '../assets/Image1.png'
-import imgFiCash from '../assets/Image7.png'
+import imgFiCash from '../assets/adabocash-interface.png'
 import imgTaskFlow from '../assets/taskflow-interface.png'
 
 const projectImages = [imgDataMap, imgFiCash, imgTaskFlow]
