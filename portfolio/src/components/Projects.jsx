@@ -64,7 +64,7 @@ export default function Projects() {
                   </div>
 
                   <div className="mt-3 flex flex-wrap gap-3">
-                    <a href="#" onClick={(e) => e.preventDefault()} className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent-2 px-6 py-3 text-sm font-semibold text-accent-contrast shadow-[0_8px_25px_rgba(167,139,250,0.35)] transition-all hover:-translate-y-0.5 hover:shadow-[0_12px_35px_rgba(167,139,250,0.5)]">
+                    <a href={project.live || '#'} target={project.live ? '_blank' : undefined} rel={project.live ? 'noopener noreferrer' : undefined} onClick={project.live ? undefined : (e) => e.preventDefault()} className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent-2 px-6 py-3 text-sm font-semibold text-accent-contrast shadow-[0_8px_25px_rgba(167,139,250,0.35)] transition-all hover:-translate-y-0.5 hover:shadow-[0_12px_35px_rgba(167,139,250,0.5)]">
                       <FiExternalLink size={16} />
                       {t.projects.live}
                     </a>
