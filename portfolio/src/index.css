@@ -1,18 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-display: 'Orbitron', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-sans: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Syne', 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-grotesk: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-terminal: 'Space Mono', ui-monospace, 'Courier New', monospace;
 
-  --color-bg: #0a0a12;
-  --color-soft: #12121d;
-  --color-surface: #171724;
-  --color-ink: #e7e7ee;
-  --color-muted: #9497a8;
-  --color-accent: #a78bfa;
-  --color-accent-2: #22d3ee;
+  --color-bg: #090c14;
+  --color-soft: #111620;
+  --color-surface: #151a25;
+  --color-ink: #f7f7f5;
+  --color-muted: #9da4b1;
+  --color-accent: #ff5a36;
+  --color-accent-2: #ff8067;
   --color-accent-contrast: #0a0a12;
   --color-line: #26263a;
 

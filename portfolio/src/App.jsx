@@ -1,6 +1,5 @@
 import { LanguageProvider } from './i18n/LanguageContext'
 import { ThemeProvider } from './theme/ThemeContext'
-import GitHubBackground from './components/GitHubBackground'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -17,7 +16,6 @@ function App() {
   return (
     <LanguageProvider>
       <ThemeProvider>
-        <GitHubBackground />
         <Navbar />
         <main>
           <Hero />

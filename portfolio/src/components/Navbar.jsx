@@ -57,24 +57,24 @@ export default function Navbar() {
   return (
     <>
       <motion.nav
-        className={`fixed left-1/2 top-4 z-[100] w-[calc(100%-2rem)] max-w-6xl -translate-x-1/2 rounded-2xl border backdrop-blur-xl transition-all duration-300 ${
+        className={`fixed left-1/2 top-0 z-[100] w-full -translate-x-1/2 border-b border-white/[0.07] backdrop-blur-xl transition-all duration-300 ${
           scrolled
-            ? 'border-accent/25 bg-bg/85 shadow-[0_8px_40px_rgba(0,0,0,0.25),0_4px_20px_rgba(167,139,250,0.15)]'
-            : 'border-line bg-bg/75 shadow-[0_4px_24px_rgba(0,0,0,0.15)]'
+            ? 'bg-[#090c14]/95 shadow-[0_8px_40px_rgba(0,0,0,0.35)]'
+            : 'bg-[#090c14]/55'
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="flex items-center justify-between px-5 py-3 md:px-6">
+        <div className="mx-auto flex h-[78px] max-w-[1440px] items-center justify-between px-6 md:px-10 lg:px-14">
           <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-accent-2 font-display text-sm font-extrabold text-accent-contrast">
-              F
+            <span className="grid h-10 w-10 grid-cols-2 gap-[3px]">
+              <span className="rounded-[2px] bg-white"></span>
+              <span className="rounded-[2px] rounded-br-[13px] bg-white"></span>
+              <span className="rounded-[2px] rounded-tr-[13px] bg-white"></span>
+              <span className="rounded-[2px] bg-white"></span>
             </span>
-            <span className="flex flex-col leading-none">
-              <span className="font-display text-base font-bold tracking-wider text-ink">FITIA</span>
-              <span className="text-[0.55rem] font-semibold uppercase tracking-[0.25em] text-muted">Portfolio</span>
-            </span>
+            <span className="font-display text-[19px] font-bold tracking-[0.01em] text-white">Fi'tia</span>
           </a>
 
           <div className="hidden items-center gap-1 lg:flex">
@@ -101,10 +101,17 @@ export default function Navbar() {
               onClick={toggle}
               aria-label="Toggle theme"
               title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
-              className="flex h-10 w-10 items-center justify-center rounded-xl border border-line bg-soft text-muted transition-colors hover:border-accent/50 hover:text-accent"
+              className="flex h-[44px] w-[44px] items-center justify-center rounded-full border border-white/10 bg-white/[0.07] text-white transition-colors hover:bg-white/15"
             >
               {theme === 'dark' ? <FiSun size={18} /> : <FiMoon size={18} />}
             </button>
+            <a
+              href="#contact"
+              onClick={(e) => handleNavClick(e, '#contact')}
+              className="hidden h-[44px] items-center gap-3 rounded-full bg-[#ff5a36] px-7 text-[14px] font-bold text-white shadow-[0_12px_28px_rgba(255,90,54,0.22)] transition-transform hover:-translate-y-0.5 sm:inline-flex"
+            >
+              {t.nav.contact} <span aria-hidden="true">↗</span>
+            </a>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"

@@ -12,18 +12,21 @@ export default function Projects() {
   const { t } = useLanguage()
 
   return (
-    <section id="projects" className="relative px-6 py-28">
+    <section id="projects" className="relative bg-[#090c14] px-6 py-28">
       <div className="mx-auto max-w-6xl">
         <motion.div
-          className="mb-16 text-center"
+          className="mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-eyebrow">{t.projects.eyebrow}</span>
-          <h2 className="text-4xl font-bold text-ink md:text-5xl">{t.projects.title}</h2>
-          <p className="mx-auto mt-4 max-w-xl text-muted">{t.projects.subtitle}</p>
+          <span className="mb-4 inline-flex items-center gap-3 text-[12px] font-bold uppercase tracking-[0.18em] text-[#ff8067]">
+            <span className="h-2 w-2 rounded-full bg-[#ff5a36]" /> {t.projects.eyebrow}
+          </span>
+          <h2 className="max-w-4xl text-4xl font-bold leading-tight text-white md:text-[54px]">
+            {t.projects.title}
+          </h2>
         </motion.div>
 
         <div className="flex flex-col gap-9">

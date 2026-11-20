@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
-import { FiGithub, FiLinkedin, FiDownload, FiArrowDown, FiArrowRight } from 'react-icons/fi'
+import { FiDownload, FiArrowRight } from 'react-icons/fi'
 import { useLanguage } from '../i18n/LanguageContext'
 import profileImg from '../assets/profile.png'
 
 export default function Hero() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
 
   const handleScroll = (id) => (e) => {
     e.preventDefault()
@@ -12,49 +12,17 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden px-6 pb-16 pt-32 md:pt-36">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute right-[-80px] top-[-120px] h-[480px] w-[480px] rounded-full bg-accent/30 blur-[90px]" />
-        <div className="absolute bottom-[-120px] left-[-60px] h-[400px] w-[400px] rounded-full bg-accent-2/25 blur-[90px]" />
-        {Array.from({ length: 45 }).map((_, i) => (
-          <span
-            key={i}
-            className="absolute h-[3px] w-[3px] rounded-full bg-ink/70"
-            style={{
-              left: `${(i * 37) % 100}%`,
-              top: `${(i * 53) % 100}%`,
-              animation: 'twinkle 3s ease-in-out infinite',
-              animationDelay: `${(i % 10) * 0.6}s`,
-              animationDuration: `${2 + (i % 5)}s`,
-            }}
-          />
-        ))}
-      </div>
-
-      <div className="relative mx-auto grid max-w-6xl items-center gap-14 md:grid-cols-[0.9fr_1.1fr]">
-        <motion.div
-          className="mx-auto flex w-full max-w-[420px] items-center justify-center"
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div className="absolute h-[380px] w-[380px] animate-spin-slower rounded-full border-2 border-dashed border-accent/40" />
-          <div className="absolute h-[330px] w-[330px] animate-spin-slow rounded-full border-2 border-dashed border-accent-2/30" />
-          <div className="absolute h-[300px] w-[300px] overflow-hidden rounded-full bg-gradient-to-br from-accent/20 to-accent-2/20 blur-md" />
-          <div className="relative h-[280px] w-[280px] overflow-hidden rounded-full border-[3px] border-line shadow-[0_0_60px_rgba(167,139,250,0.25)]">
-            <img src={profileImg} alt="Fi''tia HERINIRINA" className="h-full w-full object-cover" />
-          </div>
-        </motion.div>
-
-        <div className="flex flex-col items-start gap-6">
+    <section id="home" className="relative min-h-screen overflow-hidden bg-[#090c14] px-6 pt-[78px]">
+      <div className="mx-auto grid min-h-[calc(100vh-78px)] max-w-[1440px] items-center md:grid-cols-[0.92fr_1.08fr]">
+        <div className="relative z-10 flex min-h-[520px] flex-col justify-center py-16 md:pl-8 lg:pl-14">
           <motion.div
-            className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-muted"
+            className="mb-7 inline-flex w-fit items-center gap-3 text-[13px] font-medium text-white/75"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.5 }}
           >
-            <span className="h-2 w-2 animate-pulse-dot rounded-full bg-emerald-400" />
-            {t.hero.hello}
+            <span className="h-2 w-2 rounded-full bg-[#ff5a36]" />
+            {lang === 'fr' ? 'Actuellement occupé' : 'Currently available'}
           </motion.div>
 
           <motion.h1
@@ -63,89 +31,30 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25, duration: 0.6 }}
           >
-            <span className="text-5xl tracking-tight text-ink md:text-7xl">{t.hero.name}</span>
+            <span className="max-w-[650px] text-[48px] leading-[0.98] tracking-[-0.045em] text-white md:text-[70px] lg:text-[78px]">
+              {lang === 'fr' ? 'Développeur Full Stack basé à Madagascar' : 'Full Stack Developer based in Madagascar'}
+            </span>
           </motion.h1>
-
-          <motion.div
-            className="text-2xl font-semibold text-gradient md:text-3xl"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.6 }}
-          >
-            {t.hero.role}
-          </motion.div>
-
-          <motion.p
-            className="max-w-[540px] text-lg text-ink/75"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45, duration: 0.6 }}
-          >
-            {t.hero.tagline}
-          </motion.p>
-
-          <motion.div
-            className="inline-flex flex-wrap gap-2 rounded-full border border-accent/30 bg-accent/10 px-5 py-3 font-terminal text-sm text-accent"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-          >
-            {t.hero.stackLine.split(' • ').map((tech, i) => (
-              <span key={i}>
-                {i > 0 && <span className="mx-1 text-muted/60">•</span>}
-                {tech}
-              </span>
-            ))}
-          </motion.div>
-
-          <motion.div
-            className="flex flex-wrap gap-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-          >
-            <a href="#projects" onClick={handleScroll('#projects')} className="inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-accent to-accent-2 px-8 py-3.5 text-sm font-semibold text-accent-contrast shadow-[0_10px_30px_rgba(167,139,250,0.35)] transition-all hover:-translate-y-1 hover:brightness-105 hover:shadow-[0_15px_40px_rgba(167,139,250,0.5)]">
-              {t.hero.ctaProjects}
-              <FiArrowRight size={18} />
+          <motion.div className="mt-10 flex gap-3" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
+            <a href="#projects" onClick={handleScroll('#projects')} className="inline-flex h-12 items-center gap-3 rounded-full bg-[#ff5a36] px-7 text-sm font-bold text-white">
+              {t.hero.ctaProjects} <FiArrowRight />
             </a>
-            <a href="#contact" onClick={handleScroll('#contact')} className="inline-flex items-center gap-2.5 rounded-xl border border-line bg-soft px-8 py-3.5 text-sm font-semibold text-ink backdrop-blur-md transition-all hover:border-accent/40 hover:bg-soft">
-              {t.hero.ctaContact}
+            <a href="/src/assets/Sitrakiniaina.pdf" download className="inline-flex h-12 items-center gap-2 rounded-full border border-white/12 px-6 text-sm font-semibold text-white/80">
+              <FiDownload /> CV
             </a>
-          </motion.div>
-
-          <motion.div
-            className="flex flex-wrap items-center gap-3"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.75, duration: 0.5 }}
-          >
-            {[
-              { icon: <FiGithub size={20} />, href: t.contact.githubValue, label: t.hero.github },
-              { icon: <FiLinkedin size={20} />, href: t.contact.linkedinValue, label: t.hero.linkedin },
-              { icon: <FiDownload size={18} />, href: '/src/assets/Sitrakiniaina.pdf', label: t.hero.cv, download: true },
-            ].map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target={s.download ? undefined : '_blank'}
-                rel={s.download ? undefined : 'noopener noreferrer'}
-                download={s.download ? true : undefined}
-                aria-label={s.label}
-                className="flex h-12 items-center gap-2 rounded-full border border-line bg-soft px-5 text-sm font-medium text-muted transition-all hover:-translate-y-1 hover:border-accent/50 hover:text-ink hover:shadow-[0_8px_25px_rgba(167,139,250,0.3)]"
-              >
-                {s.icon}
-                {s.label}
-              </a>
-            ))}
           </motion.div>
         </div>
-      </div>
 
-      <div className="relative mx-auto mt-16 flex max-w-6xl justify-center">
-        <a href="#about" onClick={handleScroll('#about')} className="flex flex-col items-center gap-2 text-muted transition-colors hover:text-accent">
-          <span className="text-xs font-semibold uppercase tracking-widest">{t.nav.about}</span>
-          <FiArrowDown className="animate-bounce" />
-        </a>
+        <motion.div className="relative h-[520px] self-end overflow-hidden md:h-[calc(100vh-78px)]" initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_55%,rgba(49,58,75,0.7),transparent_48%)]" />
+          <img src={profileImg} alt="Fi'tia HERINIRINA" className="absolute bottom-0 right-[-4%] h-[92%] w-[96%] object-contain object-bottom grayscale-[10%]" />
+          <div className="absolute right-6 top-1/2 hidden w-[260px] -translate-y-1/2 rounded-2xl border border-white/10 bg-[#111620]/90 p-5 text-[14px] text-white/80 backdrop-blur-xl lg:block">
+            <p>{lang === 'fr' ? 'Une question sur mon parcours ou mes projets ?' : 'A question about my work or projects?'}</p>
+            <a href="#contact" onClick={handleScroll('#contact')} className="mt-2 inline-block text-[#ff7661]">
+              {lang === 'fr' ? 'Demande-moi' : 'Ask me'} ↗
+            </a>
+          </div>
+        </motion.div>
       </div>
     </section>
   )
